@@ -1,9 +1,14 @@
 <h1 class="text-center p-3">Upload</h1>
 <div class="row">
   <article class="col-md-9">
-    <h2>New upload</h2>
+    <h2>New uploads</h2>
 
-    <form method="POST" action="/api/upload/component">
+    <form
+      #form
+      method="POST"
+      action="https://localhost:44306/api/submission/component"
+      enctype="multipart/form-data"
+    >
       <div class="form-group">
         <label for="title">Title: </label>
         <input
@@ -31,13 +36,14 @@
           class="form-control"
           type="file"
           name="component_zipfile"
+          accept="zip,application/octet-stream,application/zip,application/x-zip,application/x-zip-compressed"
           id="zipfile"
         />
       </div>
 
-      <div class="form-group">
-        <input class="form-control" type="submit" value="Upload" />
-      </div>
+      <button type="submit" class="btn btn-primary" (click)="form.submit()">
+        Upload
+      </button>
     </form>
 
     <p>
@@ -52,10 +58,11 @@
     <h2>My uploads</h2>
 
     <div>
-        <h3>Component title</h3> 
-        <p>Avg: *** <span>(# of reviews)</span></p>
+      <h3>Component title</h3>
+      <p>Avg: *** <span>(# of reviews)</span></p>
     </div>
 
     {{ uploads }}
   </aside>
 </div>
+<review></review>

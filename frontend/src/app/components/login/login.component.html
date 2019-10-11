@@ -1,0 +1,26 @@
+<div class="row align-middle">
+  <form action="/api/user/login" method="post" class="col-6 offset-3">
+    <legend>Login</legend>
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input
+        [(ngModel)]="user.username"
+        class="form-control"
+        type="text"
+        name="username"
+        id="username"
+      />
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        [(ngModel)]="user.password"
+        class="form-control"
+        type="password"
+        name="password"
+        id="password"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

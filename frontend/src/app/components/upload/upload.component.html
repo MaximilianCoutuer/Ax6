@@ -1,0 +1,61 @@
+<h1 class="text-center p-3">Upload</h1>
+<div class="row">
+  <article class="col-md-9">
+    <h2>New upload</h2>
+
+    <form method="POST" action="/api/upload/component">
+      <div class="form-group">
+        <label for="title">Title: </label>
+        <input
+          class="form-control"
+          type="text"
+          name="component_title"
+          id="title"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea
+          class="form-control"
+          name="component_description"
+          id="description"
+          cols="30"
+          rows="10"
+        ></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="upload">Upload your component: </label>
+        <input
+          class="form-control"
+          type="file"
+          name="component_zipfile"
+          id="zipfile"
+        />
+      </div>
+
+      <div class="form-group">
+        <input class="form-control" type="submit" value="Upload" />
+      </div>
+    </form>
+
+    <p>
+      Please upload a zip file containing your component... Lorem ipsum dolor
+      sit amet consectetur adipisicing elit. Tenetur voluptatum, officiis eaque,
+      laborum eius culpa illum corporis esse praesentium vero reiciendis.
+      Accusamus aliquid earum nemo debitis amet esse ipsum eveniet!
+    </p>
+  </article>
+
+  <aside class="col-md-3">
+    <h2>My uploads</h2>
+
+    <div>
+        <h3>Component title</h3> 
+        <p>Avg: *** <span>(# of reviews)</span></p>
+    </div>
+
+    {{ uploads }}
+  </aside>
+</div>

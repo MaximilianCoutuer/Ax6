@@ -1,0 +1,5 @@
+.card-body > p:first-child{
+    white-space: pre-line;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

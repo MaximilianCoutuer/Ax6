@@ -4,4 +4,36 @@
     <TargetFramework>netcoreapp3.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Migrations\20191011191132_initial-create.cs" />
+    <Compile Remove="Migrations\20191011191132_initial-create.Designer.cs" />
+    <Compile Remove="Migrations\20191011193745_M2M.cs" />
+    <Compile Remove="Migrations\20191011193745_M2M.Designer.cs" />
+    <Compile Remove="Migrations\20191011194540_M2M2.cs" />
+    <Compile Remove="Migrations\20191011194540_M2M2.Designer.cs" />
+    <Compile Remove="Migrations\20191011195609_M2M3.cs" />
+    <Compile Remove="Migrations\20191011195609_M2M3.Designer.cs" />
+    <Compile Remove="Migrations\20191011195746_M2M4.cs" />
+    <Compile Remove="Migrations\20191011195746_M2M4.Designer.cs" />
+    <Compile Remove="Migrations\20191011195843_AF.cs" />
+    <Compile Remove="Migrations\20191011195843_AF.Designer.cs" />
+    <Compile Remove="Migrations\20191011200122_AF.cs" />
+    <Compile Remove="Migrations\20191011200122_AF.Designer.cs" />
+    <Compile Remove="Migrations\20191011200150_AF.cs" />
+    <Compile Remove="Migrations\20191011200150_AF.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
 </Project>

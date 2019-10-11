@@ -28,7 +28,7 @@ namespace Ax6
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            //services.AddTransient<Ax6Context>();
+            services.AddTransient<Ax6Context>();
 
             services.AddSwaggerGen(c =>
             {

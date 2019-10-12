@@ -58,11 +58,7 @@ namespace Ax6.Controllers
         [Route("SubmitReview")]
         public async Task<IActionResult> SubmitReview(Criteria_Review[] criteria_reviews)
         {
-            var cr = criteria_reviews;
-            foreach(Criteria_Review criteria_review in criteria_reviews)
-            {
-                _context.Criteria_Reviews.Add(criteria_review);
-            }
+            _context.Criteria_Reviews.AddRange(criteria_reviews);
 
             var review = new Review
             {
@@ -72,6 +68,7 @@ namespace Ax6.Controllers
                 Criteria_Reviews = criteria_reviews,
             };
             _context.SaveChanges();
+            return Ok(review);
         }
 
 

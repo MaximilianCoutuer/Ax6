@@ -6,6 +6,7 @@ using Ax6.Domain;
 using Ax6.Domain.Context;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Ax6.Controllers
 {
@@ -28,7 +29,7 @@ namespace Ax6.Controllers
             {
                 return BadRequest(id);
             }
-            var reviews = _context.Reviews.Where(x => x.SubmissionId == id).ToList();
+            var reviews = _context.Reviews.Where(x => x.SubmissionId == id).Include(x => x.Criteria_Reviews).ToList();
             return Ok(reviews);
         }
 
@@ -49,16 +50,18 @@ namespace Ax6.Controllers
             {
                 return BadRequest(id);
             }
-            var reviews = _context.Reviews.Where(x => x.SubmissionId == id).ToList();
+            var reviews = _context.Reviews.Where(x => x.SubmissionId == id).Include(x => x.Criteria_Reviews).ToList();
             return Ok(reviews);
         }
 
-// GET: api/Review/5
-[HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        [HttpPost]
+        [Route("addreview")]
+        public async Task<IActionResult> AddReview(Review review)
         {
-            return "value";
+
         }
+
+
 
         // POST: api/Review
         [HttpPost]

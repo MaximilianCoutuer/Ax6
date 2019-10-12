@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MCTBU01\\source\\repos\\Hackathon\\Ax6\\backend\\Ax6\\Ax6.csproj": {}
+    "C:\\Users\\trlbu14\\Desktop\\WarmsteHackathon\\Ax6\\backend\\Ax6\\Ax6.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MCTBU01\\source\\repos\\Hackathon\\Ax6\\backend\\Ax6.Domain\\Ax6.Domain.csproj": {
+    "C:\\Users\\trlbu14\\Desktop\\WarmsteHackathon\\Ax6\\backend\\Ax6.Domain\\Ax6.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MCTBU01\\source\\repos\\Hackathon\\Ax6\\backend\\Ax6.Domain\\Ax6.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\trlbu14\\Desktop\\WarmsteHackathon\\Ax6\\backend\\Ax6.Domain\\Ax6.Domain.csproj",
         "projectName": "Ax6.Domain",
-        "projectPath": "C:\\Users\\MCTBU01\\source\\repos\\Hackathon\\Ax6\\backend\\Ax6.Domain\\Ax6.Domain.csproj",
-        "packagesPath": "C:\\Users\\MCTBU01\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MCTBU01\\source\\repos\\Hackathon\\Ax6\\backend\\Ax6.Domain\\obj\\",
+        "projectPath": "C:\\Users\\trlbu14\\Desktop\\WarmsteHackathon\\Ax6\\backend\\Ax6.Domain\\Ax6.Domain.csproj",
+        "packagesPath": "C:\\Users\\trlbu14\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\trlbu14\\Desktop\\WarmsteHackathon\\Ax6\\backend\\Ax6.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\MCTBU01\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\trlbu14\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -85,20 +85,20 @@
         }
       }
     },
-    "C:\\Users\\MCTBU01\\source\\repos\\Hackathon\\Ax6\\backend\\Ax6\\Ax6.csproj": {
+    "C:\\Users\\trlbu14\\Desktop\\WarmsteHackathon\\Ax6\\backend\\Ax6\\Ax6.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MCTBU01\\source\\repos\\Hackathon\\Ax6\\backend\\Ax6\\Ax6.csproj",
+        "projectUniqueName": "C:\\Users\\trlbu14\\Desktop\\WarmsteHackathon\\Ax6\\backend\\Ax6\\Ax6.csproj",
         "projectName": "Ax6",
-        "projectPath": "C:\\Users\\MCTBU01\\source\\repos\\Hackathon\\Ax6\\backend\\Ax6\\Ax6.csproj",
-        "packagesPath": "C:\\Users\\MCTBU01\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MCTBU01\\source\\repos\\Hackathon\\Ax6\\backend\\Ax6\\obj\\",
+        "projectPath": "C:\\Users\\trlbu14\\Desktop\\WarmsteHackathon\\Ax6\\backend\\Ax6\\Ax6.csproj",
+        "packagesPath": "C:\\Users\\trlbu14\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\trlbu14\\Desktop\\WarmsteHackathon\\Ax6\\backend\\Ax6\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\MCTBU01\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\trlbu14\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -111,8 +111,8 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "C:\\Users\\MCTBU01\\source\\repos\\Hackathon\\Ax6\\backend\\Ax6.Domain\\Ax6.Domain.csproj": {
-                "projectPath": "C:\\Users\\MCTBU01\\source\\repos\\Hackathon\\Ax6\\backend\\Ax6.Domain\\Ax6.Domain.csproj"
+              "C:\\Users\\trlbu14\\Desktop\\WarmsteHackathon\\Ax6\\backend\\Ax6.Domain\\Ax6.Domain.csproj": {
+                "projectPath": "C:\\Users\\trlbu14\\Desktop\\WarmsteHackathon\\Ax6\\backend\\Ax6.Domain\\Ax6.Domain.csproj"
               }
             }
           }
@@ -149,6 +149,14 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.0.0, )"
+            },
+            "Selenium.Chrome.WebDriver": {
+              "target": "Package",
+              "version": "[76.0.0, )"
+            },
+            "Selenium.Support": {
+              "target": "Package",
+              "version": "[3.141.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

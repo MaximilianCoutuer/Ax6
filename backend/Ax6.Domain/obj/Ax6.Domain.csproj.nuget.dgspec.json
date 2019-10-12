@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MCTBU01\\source\\repos\\Hackathon\\Ax6\\backend\\Ax6.Domain\\Ax6.Domain.csproj": {}
+    "C:\\Users\\trlbu14\\Desktop\\WarmsteHackathon\\Ax6\\backend\\Ax6.Domain\\Ax6.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MCTBU01\\source\\repos\\Hackathon\\Ax6\\backend\\Ax6.Domain\\Ax6.Domain.csproj": {
+    "C:\\Users\\trlbu14\\Desktop\\WarmsteHackathon\\Ax6\\backend\\Ax6.Domain\\Ax6.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MCTBU01\\source\\repos\\Hackathon\\Ax6\\backend\\Ax6.Domain\\Ax6.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\trlbu14\\Desktop\\WarmsteHackathon\\Ax6\\backend\\Ax6.Domain\\Ax6.Domain.csproj",
         "projectName": "Ax6.Domain",
-        "projectPath": "C:\\Users\\MCTBU01\\source\\repos\\Hackathon\\Ax6\\backend\\Ax6.Domain\\Ax6.Domain.csproj",
-        "packagesPath": "C:\\Users\\MCTBU01\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MCTBU01\\source\\repos\\Hackathon\\Ax6\\backend\\Ax6.Domain\\obj\\",
+        "projectPath": "C:\\Users\\trlbu14\\Desktop\\WarmsteHackathon\\Ax6\\backend\\Ax6.Domain\\Ax6.Domain.csproj",
+        "packagesPath": "C:\\Users\\trlbu14\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\trlbu14\\Desktop\\WarmsteHackathon\\Ax6\\backend\\Ax6.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\MCTBU01\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\trlbu14\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

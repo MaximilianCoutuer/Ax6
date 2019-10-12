@@ -27,8 +27,8 @@ namespace Ax6.ComponentCapture
             driver.Quit();
         }
 
-        
-        
+
+
 
     }
 }

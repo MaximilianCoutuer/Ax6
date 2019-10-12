@@ -13,6 +13,8 @@ import { LoginComponent } from './components/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SubmissionDetailComponent } from './components/submission-detail/submission-detail.component';
 import { SafePipe } from './Pipes/safe.pipe';
+import { CriteriaReviewComponent } from './components/criteria-review/criteria-review.component';
+import { CriteriaComponent } from './components/criteria/criteria.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +25,9 @@ import { SafePipe } from './Pipes/safe.pipe';
     ReviewComponent,
     LoginComponent,
     SubmissionDetailComponent,
-    SafePipe
+    SafePipe,
+    CriteriaReviewComponent,
+    CriteriaComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FontAwesomeModule, FormsModule, HttpClientModule],
   providers: [],

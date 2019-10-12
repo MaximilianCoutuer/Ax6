@@ -24,7 +24,9 @@ export class SubmissionDetailComponent implements OnInit {
   getSafeUrl() {
     return this.domSanitizer.bypassSecurityTrustResourceUrl(this.submissionUrl);
   }
-
+  scroll(el: HTMLElement) {
+    el.scrollIntoView();
+  }
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.guid = params["guid"];

@@ -64,7 +64,6 @@ namespace Ax6.Controllers
         [Route("component")]
         public async Task<IActionResult> Upload(List<IFormFile>  component_zipfile, string component_title, string component_description)
         {
-
             var submission = new Submission()
             {
                 FolderGuid = Guid.NewGuid(),
@@ -76,9 +75,6 @@ namespace Ax6.Controllers
 
             _context.Submissions.Add(submission);
             _context.SaveChanges();
-
-
-
 
 
 

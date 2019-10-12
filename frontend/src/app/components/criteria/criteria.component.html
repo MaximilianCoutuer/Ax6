@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-lg-6 col-sm-12" *ngIf="criteria">
+    <div class="form-group">
+      <label for="{{ criteria.name }}_rating">{{ criteria.name }}</label>
+      <input
+        [(ngModel)]="rating"
+        min="0"
+        max="5"
+        type="number"
+        name="{{ criteria.name }}_rating"
+        id="{{ criteria.name }}_rating"
+      />
+    </div>
+    <fa-icon *ngFor="let i of range(rating)" [icon]="faStar">Hello</fa-icon>
+    <fa-icon *ngFor="let i of range(5 - rating)" [icon]="farStar"
+      >Hello</fa-icon
+    >
+    <div class="form-group">
+      <label for="{{ criteria.name }}_comment">Comment</label>
+      <textarea
+        class="form-control"
+        name="{{ criteria.name }}_comment"
+        id="{{ criteria.name }}_comment"
+        cols="30"
+        rows="10"
+      ></textarea>
+    </div>
+  </div>
+  <div class="col-lg-6 col-sm-12">
+    <p>{{ criteria.description }}</p>
+  </div>
+</div>

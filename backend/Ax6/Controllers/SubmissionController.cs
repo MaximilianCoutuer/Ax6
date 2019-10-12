@@ -1,4 +1,5 @@
-﻿using Ax6.Domain;
+﻿using Ax6.ComponentCapture;
+using Ax6.Domain;
 using Ax6.Domain.Context;
 using Ax6.ViewModels;
 using Microsoft.AspNetCore.Http;
@@ -63,7 +64,7 @@ namespace Ax6.Controllers
 
         [HttpPost]
         [Route("component")]
-        public async Task<IActionResult> Upload(List<IFormFile>  component_zipfile, string component_title, string component_description)
+        public async Task<IActionResult> Upload(List<IFormFile> component_zipfile, string component_title, string component_description)
         {
             var submission = new Submission()
             {
@@ -79,7 +80,7 @@ namespace Ax6.Controllers
 
 
 
-            if(component_zipfile.Count == 0)
+            if (component_zipfile.Count == 0)
             {
                 return new StatusCodeResult(400);
 
@@ -89,23 +90,23 @@ namespace Ax6.Controllers
 
             long size = file.Length;
 
+            var filePath = Path.GetTempFileName();
+
+            //ZipFile.Extract
+
+            string directory = $"submissions/{submission.FolderGuid}/";
+            string compressedPath = $"{directory}/compressed.zip";
+            string destinationPath = $"{directory}/src/";
 
             if (size > 0)
             {
-                var filePath = Path.GetTempFileName();
 
-                //ZipFile.Extract
-
-
-                string directory = $"submissions/{submission.FolderGuid}/";
-                string compressedPath = $"{directory}/compressed.zip";
-                string destinationPath = $"{directory}/src/";
 
                 if (!Directory.Exists(directory))
                 {
                     System.IO.Directory.CreateDirectory(destinationPath);
                 }
-                
+
 
                 using (var stream = System.IO.File.Create(compressedPath))
                 {
@@ -116,9 +117,18 @@ namespace Ax6.Controllers
 
                 ZipFile.ExtractToDirectory(compressedPath, destinationPath);
             }
-            
-            return Ok(new { file.FileName, size});
+
+            /*
+             * After unpack, screenshot this site
+             */
+
+            Capture capture = new Capture($"https://localhost:44306/submissions/{submission.FolderGuid}/src/index.html", $"{directory}/thumbnail.png");
+
+
+
+            return Ok(new { file.FileName, size, submission.FolderGuid });
         }
+
 
 
     }

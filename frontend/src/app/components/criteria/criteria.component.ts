@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from "@angular/core";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { faStar as farStar } from "@fortawesome/free-regular-svg-icons";
 import { Criteria } from "src/app/Models/criteria";
+import { CriteriaReview } from "src/app/Models/criteria-review";
 
 @Component({
   selector: "criteria",
@@ -12,15 +13,17 @@ export class CriteriaComponent implements OnInit {
   rating: number;
   faStar = faStar;
   farStar = farStar;
-  @Input() criteria: Criteria;
+  criteria: Criteria;
+  @Input() criteriaReview: CriteriaReview;
 
-  constructor() {
-    this.rating = 0;
-  }
+  constructor() {}
 
   range(i) {
     return new Array(i);
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.criteria = this.criteriaReview.criteria;
+    this.criteriaReview.rating = 0;
+  }
 }

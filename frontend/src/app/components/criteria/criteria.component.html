@@ -3,7 +3,7 @@
     <div class="form-group">
       <label for="{{ criteria.name }}_rating">{{ criteria.name }}</label>
       <input
-        [(ngModel)]="rating"
+        [(ngModel)]="criteriaReview.rating"
         min="0"
         max="5"
         type="number"
@@ -11,16 +11,21 @@
         id="{{ criteria.name }}_rating"
       />
     </div>
-    <fa-icon *ngFor="let i of range(rating)" [icon]="faStar">Hello</fa-icon>
-    <fa-icon *ngFor="let i of range(5 - rating)" [icon]="farStar"
-      >Hello</fa-icon
-    >
+    <fa-icon
+      *ngFor="let i of range(criteriaReview.rating)"
+      [icon]="faStar"
+    ></fa-icon>
+    <fa-icon
+      *ngFor="let i of range(5 - criteriaReview.rating)"
+      [icon]="farStar"
+    ></fa-icon>
     <div class="form-group">
       <label for="{{ criteria.name }}_comment">Comment</label>
       <textarea
         class="form-control"
         name="{{ criteria.name }}_comment"
         id="{{ criteria.name }}_comment"
+        [(ngModel)]="criteriaReview.comment"
         cols="30"
         rows="10"
       ></textarea>

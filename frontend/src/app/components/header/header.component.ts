@@ -7,8 +7,13 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 })
 export class HeaderComponent implements OnInit {
   faUser = faUser;
+  search: string = "";
 
   constructor() {}
+  searchSubmit(e) {
+    e.preventDefault();
+    console.log(e.target);
+  }
 
   ngOnInit() {}
 }

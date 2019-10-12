@@ -54,12 +54,12 @@ namespace Ax6.Controllers
             return Ok(reviews);
         }
 
-        [HttpPost]
-        [Route("addreview")]
-        public async Task<IActionResult> AddReview(Review review)
-        {
+        //[HttpPost]
+        //[Route("addreview")]
+        //public async Task<IActionResult> AddReview(Review review)
+        //{
 
-        }
+        //}
 
 
 

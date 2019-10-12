@@ -11,6 +11,7 @@ import * as _ from "lodash";
 })
 export class HomeComponent implements OnInit {
   submissions: Submission[];
+  filteredSubmissions: Submission[];
 
   constructor(private http: HttpClient) {}
 
@@ -19,7 +20,14 @@ export class HomeComponent implements OnInit {
       .get<Submission[]>("https://localhost:44306/api/submission/list")
       .subscribe((data: any) => {
         this.submissions = data;
+        this.filteredSubmissions = data;
       });
-    console.log(this.submissions);
+    document.querySelector("#searchInput").addEventListener("input", e => {
+      const val = (<HTMLInputElement>e.srcElement).value;
+      this.filteredSubmissions = this.submissions.filter(
+        s => s.title.toLowerCase().indexOf(val ? val.toLowerCase() : "", 0) >= 0
+      );
+      console.log(this.filteredSubmissions);
+    });
   }
 }

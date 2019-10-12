@@ -7,14 +7,19 @@ import { Component, OnInit } from "@angular/core";
 })
 export class UploadComponent implements OnInit {
   public uploads: any[];
-
+  public newUpload: any;
   constructor() {
+    this.newUpload = {
+      title: "",
+      description: "",
+      zip: null
+    };
     this.uploads = [];
   }
 
-  onUpload(e) {
+  uploadZip(e) {
     e.preventDefault();
-    console.log(e);
+    console.log(this.newUpload);
   }
 
   ngOnInit() {}

@@ -126,10 +126,9 @@ namespace Ax6.Controllers
 
 
 
-            return Ok(new { file.FileName, size, submission.FolderGuid });
+            //return Ok(new { file.FileName, size, submission.FolderGuid });
+            return Redirect("http://localhost:4200/upload");
         }
-
-
 
     }
 }

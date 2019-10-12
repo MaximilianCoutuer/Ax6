@@ -16,11 +16,7 @@ namespace Ax6.Domain.Context
 
         public Ax6Context()
         {
-            if (Users.Count() == 0)
-            {
-                Users.Add(new User { Id = 1, Username = "admin", Password = "admin" });
-                SaveChanges();
-            }
+
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -53,6 +49,10 @@ namespace Ax6.Domain.Context
             .WithOne(t => t.Review).OnDelete(DeleteBehavior.Restrict);
             //.WithOne<Review>(t => t.Review)
             //.WillCascadeOnDelete(false);
+
+            //modelBuilder.Entity<User>().HasData(new User { Id = 1, Username = "admin", Password = "admin" });
+            //modelBuilder.Entity<User>().HasData(new Criteria { Id = 1, Name = "Kleurgebruik (kleurenblind)", Description = "Is het kleurgebruik duidelijk? Is er geen informatie die je mist?" });
+            //modelBuilder.Entity<User>().HasData(new Criteria { Id = 2, Name = "Screenreader", Description = "Is het doel en de inhoud van de site duidelijk wanneer u de site met een screenreader bekijkt?" });
         }
     }
 }

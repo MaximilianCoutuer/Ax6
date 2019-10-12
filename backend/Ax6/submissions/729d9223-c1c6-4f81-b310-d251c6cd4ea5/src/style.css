@@ -1,0 +1,12 @@
+section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+section > article {
+  width: 33%;
+}
+
+img {
+  width: 80%;
+}

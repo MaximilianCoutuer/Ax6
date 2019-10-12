@@ -35,6 +35,7 @@ namespace Ax6.Controllers
                 s.Description,
                 s.FolderGuid,
                 s.Title,
+                s.Timestamp
             }).ToList();
             return Ok(submissions);
         }
@@ -53,7 +54,8 @@ namespace Ax6.Controllers
                     s.Description,
                     s.FolderGuid,
                     s.Title,
-                    s.Id
+                    s.Id,
+                    s.Timestamp
                 })
                 .FirstOrDefault();
 

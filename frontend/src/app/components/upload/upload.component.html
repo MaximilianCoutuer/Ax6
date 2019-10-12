@@ -44,7 +44,12 @@
         />
       </div>
 
-      <input type="submit" class="btn btn-primary" value="Submit" (click)="form.submit()" />
+      <input
+        type="submit"
+        class="btn btn-primary"
+        value="Submit"
+        (click)="form.submit()"
+      />
     </form>
 
     <p>
@@ -58,6 +63,10 @@
   <aside class="col-md-3">
     <h2>My uploads</h2>
 
-    {{ uploads }}
+    <ul>
+      <li *ngFor="let upload of uploads">
+        {{ upload.title }} ({{ upload.timestamp }})
+      </li>
+    </ul>
   </aside>
 </div>

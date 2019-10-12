@@ -6,6 +6,7 @@ using Ax6.Domain;
 using Ax6.Domain.Context;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Ax6.Controllers
 {
@@ -28,7 +29,7 @@ namespace Ax6.Controllers
             {
                 return BadRequest(id);
             }
-            var reviews = _context.Reviews.Where(x => x.SubmissionId == id).ToList();
+            var reviews = _context.Reviews.Where(x => x.SubmissionId == id).Include(x => x.Criteria_Reviews).ToList();
             return Ok(reviews);
         }
 
@@ -49,16 +50,28 @@ namespace Ax6.Controllers
             {
                 return BadRequest(id);
             }
-            var reviews = _context.Reviews.Where(x => x.SubmissionId == id).ToList();
+            var reviews = _context.Reviews.Where(x => x.SubmissionId == id).Include(x => x.Criteria_Reviews).ToList();
             return Ok(reviews);
         }
 
-// GET: api/Review/5
-[HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        [HttpPost]
+        [Route("SubmitReview")]
+        public async Task<IActionResult> SubmitReview(Criteria_Review[] criteria_reviews)
         {
-            return "value";
+            _context.Criteria_Reviews.AddRange(criteria_reviews);
+
+            var review = new Review
+            {
+                Id = _context.Reviews.Count() + 1,
+                CreatorId = 1,
+                Creator = _context.Users.Where(x => x.Id == 1).FirstOrDefault(),
+                Criteria_Reviews = criteria_reviews,
+            };
+            _context.SaveChanges();
+            return Ok(review);
         }
+
+
 
         // POST: api/Review
         [HttpPost]

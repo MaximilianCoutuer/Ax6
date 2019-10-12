@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Submission } from 'src/app/Models/submission';
 
 @Component({
   selector: 'element-overview',
@@ -6,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./element-overview.component.scss']
 })
 export class ElementOverviewComponent implements OnInit { 
-@Input() title: string;
+@Input() submission: Submission;
   constructor() { }
   ngOnInit() {
   }

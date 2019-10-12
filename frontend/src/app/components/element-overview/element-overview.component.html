@@ -1,6 +1,8 @@
 <div class="card">
-  <h1 class="card-header">{{title}}</h1>
+  <h1 class="card-header">{{ submission.title }}</h1>
   <div class="card-body">
-    <p><strong>Made by: </strong>Ben</p>
+    <p>{{ submission.description }}</p>
+    <p><strong>Made by: </strong>{{ submission.creator.username }}</p>
   </div>
+  <a href="/submission/{{submission.folderGuid}}">View</a>
 </div>

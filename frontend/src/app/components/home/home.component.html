@@ -1,10 +1,11 @@
 <div class="row">
   <article class="col-md-12">
     <h1 class="text-center">Components</h1>
+
+    
     <div class="componentsOverview mt-3">
-      <element-overview [title]="LoginComponent" class="col-3"></element-overview>
-      <element-overview [title]="Test1" class="col-3"></element-overview>
-      <element-overview [title]="Test2" class="col-3"></element-overview>
+
+      <element-overview *ngFor="let submission of submissions" [submission]="submission" class="col-3"></element-overview>
     </div>
   </article>
 </div>

@@ -3,6 +3,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { UploadComponent } from "./components/upload/upload.component";
 import { HomeComponent } from "./components/home/home.component";
 import { LoginComponent } from "./components/login/login.component";
+import { SubmissionDetailComponent } from './components/submission-detail/submission-detail.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: "login",
     component: LoginComponent
+  },
+  {
+    path: "submission/:guid",
+    component: SubmissionDetailComponent
   }
 ];
 

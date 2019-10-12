@@ -10,6 +10,9 @@ import { ElementOverviewComponent } from "./components/element-overview/element-
 import { ReviewComponent } from "./components/review/review.component";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LoginComponent } from './components/login/login.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SubmissionDetailComponent } from './components/submission-detail/submission-detail.component';
+import { SafePipe } from './Pipes/safe.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,9 +21,11 @@ import { LoginComponent } from './components/login/login.component';
     HeaderComponent,
     ElementOverviewComponent,
     ReviewComponent,
-    LoginComponent
+    LoginComponent,
+    SubmissionDetailComponent,
+    SafePipe
   ],
-  imports: [BrowserModule, AppRoutingModule, FontAwesomeModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FontAwesomeModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -1,5 +1,6 @@
 ﻿using Ax6.Domain;
 using Ax6.Domain.Context;
+using Ax6.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -24,10 +25,38 @@ namespace Ax6.Controllers
         [Route("list")]
         public async Task<IActionResult> List()
         {
-
-            return View(1);
+            var submissions = _context.Submissions.Select(s => new
+            {
+                Creator = new UserViewModel
+                {
+                    Username = s.Creator.Username
+                },
+                s.Description,
+                s.FolderGuid,
+                s.Title,
+            }).ToList();
+            return Ok(submissions);
         }
 
+        [Route("{guid}")]
+        public async Task<IActionResult> GetByGuid(Guid guid)
+        {
+            var submission = _context.Submissions
+                .Where(s => s.FolderGuid.Equals(guid))
+                .Select(s => new
+                {
+                    Creator = new UserViewModel
+                    {
+                        Username = s.Creator.Username
+                    },
+                    s.Description,
+                    s.FolderGuid,
+                    s.Title,
+                })
+                .FirstOrDefault();
+
+            return Ok(submission);
+        }
 
 
 

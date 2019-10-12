@@ -54,12 +54,25 @@ namespace Ax6.Controllers
             return Ok(reviews);
         }
 
-        //[HttpPost]
-        //[Route("addreview")]
-        //public async Task<IActionResult> AddReview(Review review)
-        //{
+        [HttpPost]
+        [Route("SubmitReview")]
+        public async Task<IActionResult> SubmitReview(Criteria_Review[] criteria_reviews)
+        {
+            var cr = criteria_reviews;
+            foreach(Criteria_Review criteria_review in criteria_reviews)
+            {
+                _context.Criteria_Reviews.Add(criteria_review);
+            }
 
-        //}
+            var review = new Review
+            {
+                Id = _context.Reviews.Count() + 1,
+                CreatorId = 1,
+                Creator = _context.Users.Where(x => x.Id == 1).FirstOrDefault(),
+                Criteria_Reviews = criteria_reviews,
+            };
+            _context.SaveChanges();
+        }
 
 
 

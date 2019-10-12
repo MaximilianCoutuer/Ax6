@@ -22,7 +22,17 @@
       <button (click)="scroll(review)" class="btn btn-primary">
         Write review
       </button>
-      <p>avg rating (# of votes)</p>
+      <p *ngIf="reviews && reviews.length > 0">
+        <fa-icon
+          *ngFor="let i of range(avgReviews())"
+          [icon]="faStar"
+        ></fa-icon>
+        <fa-icon
+          *ngFor="let i of range(5 - avgReviews())"
+          [icon]="farStar"
+        ></fa-icon>
+        ({{ reviews.length }})
+      </p>
     </aside>
   </div>
 
@@ -33,6 +43,6 @@
 
     else show 'Write a review to see the other reviews' -->
 
-    <criteria-review></criteria-review>
+    <criteria-review [submissionId]="submission?.id"></criteria-review>
   </div>
 </div>

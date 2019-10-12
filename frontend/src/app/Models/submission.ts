@@ -5,4 +5,5 @@ export class Submission {
   description: string;
   folderGuid: string;
   title: string;
+  id: string;
 }

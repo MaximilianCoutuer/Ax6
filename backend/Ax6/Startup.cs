@@ -39,7 +39,9 @@ namespace Ax6
                 builder =>
                 {
                     builder.WithOrigins("http://localhost:4200",
-                                        "https://localhost:4200");
+                                        "https://localhost:4200")
+                                        .AllowAnyHeader()
+                                        .AllowAnyMethod();
                 });
             });
 

@@ -22,14 +22,25 @@ namespace Ax6.Controllers
         }
 
         [HttpGet]
-        [Route("getreviewsforsubmission")]
+        [Route("getreviewsforsubmission/{id}")]
         public async Task<IActionResult> GetReviewsForSubmission(int id)
         {
-            if (_context.Submissions.Where(x => x.Id == id).Count() == 0)
-            {
-                return BadRequest(id);
-            }
-            var reviews = _context.Reviews.Where(x => x.SubmissionId == id).Include(x => x.Criteria_Reviews).ToList();
+            var reviews = _context.Criteria_Reviews.Include(cr => cr.Criteria).Include(cr => cr.Review).Where(cr => cr.Review.SubmissionId == id)
+                .Select(cr => new { 
+                    Criteria = new
+                    {
+                        cr.Criteria.Id,
+                        cr.Criteria.Name,
+                        cr.Criteria.Description,
+                    },
+                    Review = new
+                    {
+                        cr.Review.Id
+                    },
+                    cr.Id,
+                    cr.Rating,
+                    cr.Comment
+                }).ToList();
             return Ok(reviews);
         }
 
@@ -55,20 +66,26 @@ namespace Ax6.Controllers
         }
 
         [HttpPost]
-        [Route("SubmitReview")]
-        public async Task<IActionResult> SubmitReview(Criteria_Review[] criteria_reviews)
+        [Route("submitreview/{submissionId}")]
+        public async Task<IActionResult> SubmitReview(int submissionId, ICollection<Criteria_Review> criteria_reviews)
         {
-            _context.Criteria_Reviews.AddRange(criteria_reviews);
-
+            criteria_reviews = criteria_reviews.Where(cr => cr.Comment.Length > 0).ToList();
+            
             var review = new Review
             {
-                Id = _context.Reviews.Count() + 1,
                 CreatorId = 1,
-                Creator = _context.Users.Where(x => x.Id == 1).FirstOrDefault(),
-                Criteria_Reviews = criteria_reviews,
+                SubmissionId = submissionId
             };
-            _context.SaveChanges();
-            return Ok(review);
+
+            foreach (var cr in criteria_reviews)
+            {
+                cr.Criteria = null;
+                cr.Review = review;
+                await _context.Criteria_Reviews.AddAsync(cr);
+            }
+
+            await _context.SaveChangesAsync();
+            return Ok(new { result = true });
         }
 
 

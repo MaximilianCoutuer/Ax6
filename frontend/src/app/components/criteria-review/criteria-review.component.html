@@ -2,6 +2,7 @@
   <div *ngFor="let critRev of criteriaReviews" class="row">
     <criteria [criteriaReview]="critRev"></criteria>
   </div>
+
   <p class="danger" *ngIf="errorMessage">{{ errorMessage }}</p>
   <button type="submit" class="btn btn-primary">Place review</button>
 </form>

@@ -4,14 +4,16 @@ using Ax6.Domain.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Ax6.Domain.Migrations
 {
     [DbContext(typeof(Ax6Context))]
-    partial class Ax6ContextModelSnapshot : ModelSnapshot
+    [Migration("20191012094555_ReviewComment")]
+    partial class ReviewComment
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

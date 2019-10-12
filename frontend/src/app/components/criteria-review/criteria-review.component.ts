@@ -1,6 +1,7 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { CriteriaReview } from "src/app/Models/criteria-review";
+import { HttpHeaders } from "@angular/common/http";
 
 @Component({
   selector: "criteria-review",
@@ -11,6 +12,14 @@ export class CriteriaReviewComponent implements OnInit {
   criteria: any[];
   criteriaReviews: CriteriaReview[];
   errorMessage: string;
+  @Input() submissionId: number;
+
+  httpOptions = {
+    headers: new HttpHeaders({
+      "Content-Type": "application/json",
+      Authorization: "my-auth-token"
+    })
+  };
 
   constructor(private http: HttpClient) {
     this.criteria = [];
@@ -20,16 +29,19 @@ export class CriteriaReviewComponent implements OnInit {
     e.preventDefault();
     let valid = true;
     this.criteriaReviews.forEach(cr => {
-      valid =
-        (cr.rating > 0 && cr.comment && cr.comment.length > 10) ||
-        (cr.rating == 0 && cr.comment == "");
+      cr.criteriaId = cr.criteria.id;
     });
     if (valid) {
       this.errorMessage = null;
-      this.http.post(
-        "https://localhost:44306/api/review/submitReview",
-        this.criteriaReviews
-      );
+      this.http
+        .post(
+          `https://localhost:44306/api/review/submitreview/${this.submissionId}`,
+          JSON.stringify(this.criteriaReviews),
+          this.httpOptions
+        )
+        .subscribe((data: any) => {
+          console.log(data);
+        });
       this.criteriaReviews.map(cr => {
         cr.comment = "";
         cr.rating = 0;
@@ -40,8 +52,6 @@ export class CriteriaReviewComponent implements OnInit {
       this.errorMessage =
         "Form cannot be empty, if you give a score you must write a comment";
     }
-    console.log(`valid: ${valid}`);
-    console.log(this.criteriaReviews);
   }
 
   ngOnInit() {

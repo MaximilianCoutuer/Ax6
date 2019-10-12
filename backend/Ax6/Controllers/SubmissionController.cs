@@ -52,6 +52,7 @@ namespace Ax6.Controllers
                     s.Description,
                     s.FolderGuid,
                     s.Title,
+                    s.Id
                 })
                 .FirstOrDefault();
 

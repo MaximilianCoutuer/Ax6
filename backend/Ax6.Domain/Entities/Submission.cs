@@ -16,7 +16,7 @@ namespace Ax6.Domain
         public Guid FolderGuid { get; set; }
         public DateTime Timestamp { get; set; }
         [Required]
-        [MinLength(50, ErrorMessage = "Minimum lengte 50 karakters")]
+        //[MinLength(50, ErrorMessage = "Minimum lengte 50 karakters")]
         [DataType(DataType.MultilineText)]
         public string Description { get; set; }
         [Required]

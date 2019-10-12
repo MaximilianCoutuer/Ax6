@@ -21,10 +21,12 @@ namespace Ax6.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Register(string username, string password)
+        public async Task<IActionResult> Login(string username, string password)
         {
-            var user = new User { Username = username, Password = password };
-            await _context.Users.AddAsync(user);
+            // Check if user exists
+
+                var user = new User { Username = username, Password = password };
+                await _context.Users.AddAsync(user);
             return Ok(user);
         }
 

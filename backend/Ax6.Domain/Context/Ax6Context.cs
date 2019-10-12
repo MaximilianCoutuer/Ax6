@@ -50,9 +50,9 @@ namespace Ax6.Domain.Context
             //.WithOne<Review>(t => t.Review)
             //.WillCascadeOnDelete(false);
 
-            //modelBuilder.Entity<User>().HasData(new User { Id = 1, Username = "admin", Password = "admin" });
-            //modelBuilder.Entity<User>().HasData(new Criteria { Id = 1, Name = "Kleurgebruik (kleurenblind)", Description = "Is het kleurgebruik duidelijk? Is er geen informatie die je mist?" });
-            //modelBuilder.Entity<User>().HasData(new Criteria { Id = 2, Name = "Screenreader", Description = "Is het doel en de inhoud van de site duidelijk wanneer u de site met een screenreader bekijkt?" });
+            modelBuilder.Entity<User>().HasData(new User { Id = 1, Username = "admin", Password = "admin" });
+            modelBuilder.Entity<Criteria>().HasData(new Criteria { Id = 1, Name = "Kleurgebruik (kleurenblind)", Description = "Is het kleurgebruik duidelijk? Is er geen informatie die je mist?" });
+            modelBuilder.Entity<Criteria>().HasData(new Criteria { Id = 2, Name = "Screenreader", Description = "Is het doel en de inhoud van de site duidelijk wanneer u de site met een screenreader bekijkt?" });
         }
     }
 }
